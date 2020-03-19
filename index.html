@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Игра</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		 @font-face {
+    	font-family: dooml; /* Имя шрифта */
+    	src: url(AmazDooMLeft.ttf); /* Путь к файлу со шрифтом */
+   		}
+   		@font-face {
+    	font-family: doomr; /* Имя шрифта */
+    	src: url(AmazDooMRight.ttf); /* Путь к файлу со шрифтом */
+   		}
+		.box {
+			
+			height: 150px;
+			width: 150px;
+			background-color: mediumpurple;
+			transition: 0.2s;
+			position: absolute;
+			opacity: 0.8
+			
+		}	
+		H1 {
+			font-family: dooml;
+			font-size: 500%;
+			color: mediumpurple
+		}
+	</style>
+</head>
+<body>
+	<div class="text-center" style="background-image: url(anime.jpg);background-size: 100% 100%;height: 966px">
+		<h1>Сколько времени осталос<span style="font-family: doomr">Ь:</span><span style="font-size: 120%;color: #cab5f4" class="vremya">4</span> Секун<span style="font-family: doomr">Д</span></h1>
+		<div class="box" style="top: 0px;left: 300px;"></div>
+		<div class="box" style="top: 203px;left: 900px;border-radius: 50%;height: 100px;
+			width: 100px;"></div>
+		<div class="box" style="top: 346px;left: 1200px;"></div>
+		<div class="box" style="top: 465px;left: 902px;border-radius: 50%;height: 100px;
+			width: 100px;"></div>
+		<div class="box" style="top: 706px;left: 1241px;"></div>
+		<div class="box" style="top: 235px;left: 242px;border-radius: 50%;height: 100px;
+			width: 100px;"></div>
+		<div class="box" style="top: 756px;left: 441px;"></div>
+		<div class="box" style="top: 235px;left: 1722px;border-radius: 50%;height: 100px;
+			width: 100px;"></div>
+	</div>
+
+	<script type="text/javascript">
+		let box = document.querySelectorAll(".box")
+		let time = document.querySelector(".vremya")
+		let score = 0
+
+		for(let i = 0; i < 8; i++) {	
+		box[i].onclick = function() {
+				score = score +1
+				box[i].style.backgroundColor = "gray"
+				if(score==8){
+					alert("Ты сделал это, ты выйграл!")
+
+				}
+			}
+		}
+		let vremya3 = function() {
+			time.innerHTML = 3
+		}
+		let vremya2 = function() {
+			time.innerHTML = 2
+		}
+		let vremya1 = function() {
+			time.innerHTML = 1
+		}
+		let vremya0 = function() {
+			time.innerHTML = 0
+		}
+		let boxNone = function() {
+			
+			box[0].style.display = "none"
+			box[1].style.display = "none"
+			box[2].style.display = "none"
+			box[3].style.display = "none"
+			box[4].style.display = "none"
+			box[5].style.display = "none"
+			box[6].style.display = "none"
+			box[7].style.display = "none"
+			
+			
+		}
+		setTimeout(vremya3,1000)
+		setTimeout(vremya2,2000)
+		setTimeout(vremya1,3000)
+		setTimeout(vremya0,4000)
+		setTimeout(boxNone,4000)
+		//for(let i = 0; i < 6; i++) {}
+
+	</script>
+</body>
+</html>
+
